@@ -34,7 +34,10 @@ public class ItemsAdapter extends ArrayAdapter<TodoItem> {
             viewHolder = (ViewHolder) convertView.getTag();
         }
         viewHolder.text.setText(item.text);
-        String dueDateString = new SimpleDateFormat("MMM dd").format(item.dueDate);
+        String dueDateString = "";
+        if (item.dueDate != null) {
+            dueDateString = new SimpleDateFormat("MMM dd").format(item.dueDate);
+        }
         viewHolder.dueDate.setText(dueDateString);
         return convertView;
     }
