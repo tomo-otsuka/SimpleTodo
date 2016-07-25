@@ -24,7 +24,7 @@ public class EditItemActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_item);
         loadSelectedItem();
         TextView etEditItem = (TextView) findViewById(R.id.etEditItem);
-        etEditItem.setText(selectedItem.toString());
+        etEditItem.setText(selectedItem.text);
     }
 
     protected void onSaveItem(View v) {

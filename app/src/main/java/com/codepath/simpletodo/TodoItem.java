@@ -17,8 +17,4 @@ public class TodoItem extends Model {
         super();
         this.text = text;
     }
-
-    public String toString() {
-        return this.text;
-    }
 }
