@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void readItems() {
-        List<TodoItem> todoItems = new Select().from(TodoItem.class).execute();
+        List<TodoItem> todoItems = new Select().from(TodoItem.class).orderBy("dueDate").execute();
         items = (ArrayList<TodoItem>) todoItems;
     }
 }

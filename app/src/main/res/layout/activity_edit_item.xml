@@ -24,14 +24,11 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/etEditItem"
+        android:clickable="false"
+        android:editable="true"
         android:layout_below="@+id/tvEditItemTitle"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:clickable="false"
-        android:editable="true" />
+        android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -39,8 +36,29 @@
         android:text="Save"
         android:onClick="onSaveItem"
         android:id="@+id/btnSaveEditItem"
-        android:layout_below="@+id/etEditItem"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Due Date:"
+        android:id="@+id/textView"
         android:layout_alignLeft="@+id/etEditItem"
         android:layout_alignStart="@+id/etEditItem"
-        android:layout_marginTop="40dp" />
+        android:layout_below="@+id/etEditItem" />
+
+    <CalendarView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cvDueDate"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@+id/btnSaveEditItem" />
+
 </RelativeLayout>
