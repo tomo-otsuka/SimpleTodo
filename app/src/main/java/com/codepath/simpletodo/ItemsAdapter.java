@@ -10,23 +10,27 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class ItemsAdapter extends ArrayAdapter<TodoItem> {
+    private static class ViewHolder {
+        TextView text;
+    }
+
     public ItemsAdapter(Context context, ArrayList<TodoItem> items) {
         super(context, 0, items);
     }
     
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // Get the data item for this position
         TodoItem item = getItem(position);
-        // Check if an existing view is being reused, otherwise inflate the view
+        ViewHolder viewHolder;
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_todo, parent, false);
+            viewHolder = new ViewHolder();
+            viewHolder.text = (TextView) convertView.findViewById(R.id.tvItemText);
+            convertView.setTag(viewHolder);
+        } else {
+            viewHolder = (ViewHolder) convertView.getTag();
         }
-        // Lookup view for data population
-        TextView tvName = (TextView) convertView.findViewById(R.id.tvItemText);
-        // Populate the data into the template view using the data object
-        tvName.setText(item.text);
-        // Return the completed view to render on screen
+        viewHolder.text.setText(item.text);
         return convertView;
     }
 }
