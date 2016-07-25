@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -18,7 +17,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     ArrayList<TodoItem> items;
-    ArrayAdapter<TodoItem> itemsAdapter;
+    ItemsAdapter itemsAdapter;
     ListView lvItems;
 
     @Override
@@ -31,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         lvItems = (ListView) findViewById(R.id.lvItems);
         items = new ArrayList<>();
         readItems();
-        itemsAdapter = new ArrayAdapter<TodoItem>(this, android.R.layout.simple_list_item_1, items);
+        itemsAdapter = new ItemsAdapter(this, items);
         lvItems.setAdapter(itemsAdapter);
         setupListViewListener();
     }

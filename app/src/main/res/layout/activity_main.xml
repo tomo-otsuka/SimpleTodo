@@ -21,12 +21,15 @@
 
     <EditText
         android:imeOptions="actionDone"
-        android:layout_width="wrap_content"
+        android:hint="Add a to-do item"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/etNewItem"
         android:layout_alignBottom="@+id/btnAddItem"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/btnAddItem"
+        android:layout_toStartOf="@+id/btnAddItem" />
 
     <ListView
         android:layout_width="wrap_content"
